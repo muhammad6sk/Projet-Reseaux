@@ -1,0 +1,50 @@
+/* Global */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navbar personnalisée */
+  .custom-navbar {
+    background: linear-gradient(45deg, #0056b3, #00bfff);
+  }
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  .nav-link:hover {
+    color: #ffc107;
+  }
+  
+  /* Conteneur principal */
+  .main-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Footer */
+  .footer {
+    background: #343a40;
+    color: #fff;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  /* Améliorations pour les boutons */
+  .btn-primary {
+    background-color: #0056b3;
+    border: none;
+  }
+  .btn-primary:hover {
+    background-color: #004494;
+  }
+  

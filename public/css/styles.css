@@ -1,0 +1,49 @@
+/* Couleur de fond générale */
+body {
+    background: #f4f6f9;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  /* Navbar avec un dégradé moderne */
+  .navbar {
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+  }
+  
+  /* Logo avec effet de survol : changement de couleur et léger agrandissement */
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000 !important;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-brand:hover {
+    color: #007bff !important;
+    transform: scale(1.1);
+  }
+  
+  /* Liens de la navbar avec effet de survol similaire */
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    color: #000 !important;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #007bff !important;
+    transform: scale(1.1);
+  }
+  
+  /* Style du conteneur principal */
+  .container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Footer */
+  footer {
+    background: #343a40;
+  }
+  
