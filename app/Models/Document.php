@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Document extends Model
 {
     use HasFactory;
-    protected $fillable = ['titre', 'description', 'dateUpload'];
+    protected $fillable = ['file_name', 'file_path'];
     protected $table = 'document';
 }

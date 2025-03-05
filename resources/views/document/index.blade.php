@@ -7,9 +7,7 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Date Upload</th>
+                <th>Nom du fichier</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -17,16 +15,9 @@
             @foreach($document as $document)
                 <tr>
                     <td>{{ $document->id }}</td>
-                    <td>{{ $document->titre }}</td>
-                    <td>{{ $document->description }}</td>
-                    <td>{{ $document->dateUpload }}</td>
+                    <td>{{ $document->file_name }}</td>
                     <td>
-                        <a href="{{ route('document.edit', $document) }}" class="btn btn-warning">Modifier</a>
-                        <form action="{{ route('document.destroy', $document) }}" method="POST" style="display:inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger" type="submit">Supprimer</button>
-                        </form>
+                        <a href="{{ asset('storage/' . $document->file_path) }}" class="btn btn-info" target="_blank">Télécharger</a>
                     </td>
                 </tr>
             @endforeach

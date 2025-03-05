@@ -36,14 +36,30 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'titre'  => 'required|string|max:255',
-            'description'  => 'required|string|max:255',
-            'dateUpload'  => 'required|date',
+        // Validation du fichier uploadé : ici, on autorise par exemple les fichiers PDF, DOC, DOCX et TXT
+        $request->validate([
+            'document' => 'required|file|mimes:pdf,doc,docx,txt'
         ]);
+
+        // Vérifier que le fichier est présent
+        if ($request->hasFile('document')) {
+            $file = $request->file('document');
+
+            // Renommer le fichier (ici, en ajoutant un timestamp)
+            $filename = time() . '_' . $file->getClientOriginalName();
+
+            // Stocker le fichier dans le répertoire 'documents' dans le disque 'public'
+            $path = $file->storeAs('document', $filename, 'public');
+
+            // Sauvegarder les informations du fichier dans la base de données
+            Document::create([
+                'file_name' => $filename,
+                'file_path' => $path
+            ]);
+        }
+        return redirect()->route('document.index')->with('success', 'Document uploadé avec succès.');
     
-        Document::create($validated);
-        return redirect()->route('document.index')->with('success', 'Document créé avec succès.');
+
     }
 
     /**
